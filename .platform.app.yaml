@@ -49,6 +49,15 @@ web:
            scripts: true
            allow: true 
 
+source:
+    operations:
+        update:
+            command: |
+            set -e
+            composer require johnpbloch/wordpress-core:$VERSION johnpbloch/wordpress:$VERSION
+            git add *
+            git commit -m 'Update wp-core and wordpress depencies'
+
 # The size of the persistent disk of the application (in MB).
 disk: 2048
 
